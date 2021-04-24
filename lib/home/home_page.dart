@@ -19,24 +19,40 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                LevelButtonWidget(
-                  label: 'Fácil',
-                ),
-                LevelButtonWidget(
-                  label: 'Médio',
-                ),
-                LevelButtonWidget(
-                  label: 'Difícil',
-                ),
-                LevelButtonWidget(
-                  label: 'Perito',
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  LevelButtonWidget(
+                    label: 'Fácil',
+                  ),
+                  LevelButtonWidget(
+                    label: 'Médio',
+                  ),
+                  LevelButtonWidget(
+                    label: 'Difícil',
+                  ),
+                  LevelButtonWidget(
+                    label: 'Perito',
+                  ),
+                ],
+              ),
             ),
-            QuizCardWidget()
+            //SizedBox(height: 24),
+            Expanded(
+              child: GridView.count(
+                crossAxisSpacing: 16.0,
+                mainAxisSpacing: 16.0,
+                crossAxisCount: 2,
+                children: [
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
