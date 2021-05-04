@@ -1,3 +1,4 @@
+import 'package:devquiz/challenge/challenge_page.dart';
 import 'package:devquiz/challenge/widgets/quiz/quiz_widget.dart';
 import 'package:devquiz/core/app_colors.dart';
 import 'package:devquiz/home/home_controller.dart';
@@ -70,6 +71,13 @@ class _HomePageState extends State<HomePage> {
                             percent: e.questionsAnswered / e.questions.length,
                             completed:
                                 "${e.questionsAnswered}/${e.questions.length}",
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ChallengePage(questions: e.questions,)),
+                              );
+                            },
                           ))
                       .toList(),
                 ),
